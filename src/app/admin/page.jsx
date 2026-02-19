@@ -158,6 +158,22 @@ export default function AdminPanel() {
                 </div>
             </header>
 
+            {/* Metrics Dashboard */}
+            <div className="grid-3" style={{ marginBottom: '2rem' }}>
+                <div className="glass-card" style={{ borderLeft: '4px solid var(--primary)' }}>
+                    <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem' }}>Total Requests</p>
+                    <h2 style={{ fontSize: '2rem', margin: '0.5rem 0' }}>{allRequests.length}</h2>
+                </div>
+                <div className="glass-card" style={{ borderLeft: '4px solid var(--warning)' }}>
+                    <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem' }}>Pending Approvals</p>
+                    <h2 style={{ fontSize: '2rem', margin: '0.5rem 0' }}>{allRequests.filter(r => r.status === "Pending").length}</h2>
+                </div>
+                <div className="glass-card" style={{ borderLeft: '4px solid var(--success)' }}>
+                    <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem' }}>Registered Employees</p>
+                    <h2 style={{ fontSize: '2rem', margin: '0.5rem 0' }}>{users.length}</h2>
+                </div>
+            </div>
+
             {activeTab === "requests" ? (
                 <section className="glass-card" style={{ padding: '0' }}>
                     <div style={{ padding: '1.5rem', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
